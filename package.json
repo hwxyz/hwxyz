@@ -1,31 +1,35 @@
 {
   "name": "hwxyz",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个简单的脚手架工具",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "hwxyz": "./bin/hwxyz.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huomarvin/hwxyz.git"
   },
-  "author": "",
+  "bin": {
+    "hwxyz": "./bin/hwxyz"
+  },
+  "author": "Marvin.H",
+  "bugs": {
+    "url": "https://github.com/huomarvin/hwxyz/issues"
+  },
+  "homepage": "https://github.com/huomarvin/hwxyz",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
     "download-git-repo": "^1.0.2",
     "latest-version": "^3.1.0",
-    "log-symbols": "^2.2.0"
-  },
-  "devDependencies": {
+    "log-symbols": "^2.2.0",
     "glob": "^7.1.2",
     "handlebars": "^4.0.11",
     "inquirer": "^5.2.0",
     "metalsmith": "^2.3.0",
     "ora": "^2.1.0"
-  }
+  },
+  "devDependencies": {}
 }
