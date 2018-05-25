@@ -20,6 +20,9 @@
   "homepage": "https://github.com/huomarvin/hwxyz",
   "license": "ISC",
   "devDependencies": {
+   
+  },
+  "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
     "download-git-repo": "^1.0.2",
@@ -30,7 +33,5 @@
     "inquirer": "^5.2.0",
     "metalsmith": "^2.3.0",
     "ora": "^2.1.0"
-  },
-  "dependencies": {
   }
 }
