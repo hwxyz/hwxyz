@@ -9,7 +9,13 @@ It can customize interactions.
 
 I will perfect it step by step.
 
-
+## Develop
+```shell
+node -v
+#v8.9.3
+npm -v
+#5.6.0
+```
 
 ## Installation
 
@@ -18,6 +24,8 @@ Using npm:
 ```shell
 npm install -g hwxyz
 hwxyz init <project name>
+# 指定初始化仓库
+hwxyz init <project name> -r huomarvin/react-koa2-ssr
 ```
 
 Update hwxyz:

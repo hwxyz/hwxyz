@@ -1,6 +1,6 @@
 {
   "name": "hwxyz",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "一个简单的脚手架工具",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/huomarvin/hwxyz",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
     "download-git-repo": "^1.0.2",
@@ -31,5 +31,6 @@
     "metalsmith": "^2.3.0",
     "ora": "^2.1.0"
   },
-  "devDependencies": {}
+  "dependencies": {
+  }
 }
