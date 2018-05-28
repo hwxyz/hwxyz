@@ -65,15 +65,11 @@ function go() {
     if (projectRoot !== '.') {
       fs.mkdirSync(projectRoot)
     }
-    let tmp = path.join(process.cwd(), projectRoot, '.download-temp')// 下载之后暂存代码的隐藏文件夹位置
-    if (projectRoot === '.') {
-      projectRoot = rootName;
-    }
-    return download(tmp, program.repository).then(tmp => {
+    return download(projectRoot, program.repository).then(target => {
       return {
         name: projectRoot,
         root: projectRoot,
-        tmp: tmp
+        target: target
       }
     })
   }).then(context => {
@@ -101,7 +97,7 @@ function go() {
     })
   }).then(context => {
     // 添加生成的逻辑
-    return generator(context.metadata, context.tmp, path.parse(context.tmp).dir);
+    return generator(context.metadata, context.target, path.parse(context.target).dir);
   }).then((res) => {
     // 成功用绿色显示，给出积极的反馈
     console.log(logSymbols.success, chalk.green('创建成功:)'))
