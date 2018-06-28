@@ -82,21 +82,16 @@ function go() {
         default: `A project named ${context.name}`
       }
     ]).then(answers => {
-      return latestVersion('macaw-ui').then(version => {
-        answers.supportUiVersion = version
-        return {
-          ...context,
-          metadata: {
-            ...answers
-          }
+      return {
+        ...context,
+        metadata: {
+          ...answers
         }
-      }).catch(err => {
-        return Promise.reject(err)
-      })
+      }
     })
   }).then(context => {
     // 添加生成的逻辑
-    return generator(context.metadata, `${process.cwd()}/${projectName}/.download-temp`, `${process.cwd()}/${projectName}/`)
+    return generator(context.metadata, context.downloadTemp, context.root)
   }).then(context => {
     // 成功用绿色显示，给出积极的反馈
     console.log(logSymbols.success, chalk.green('创建成功:)'))
