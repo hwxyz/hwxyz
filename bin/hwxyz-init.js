@@ -18,9 +18,13 @@ const chalk = require('chalk')
 const logSymbols = require('log-symbols')
 
 program.usage('<project-name>')
+  .option('-t, --type [repository-type]', 'assign to repository type', 'github')
   .option('-r, --repository [repository]', 'assign to repository', 'huomarvin/hwxyz-test')
   .parse(process.argv);
 
+console.log('repository - type', program.type);
+console.log('repository - r', program.repository);
+// return ;
 let projectName = program.args[0];
 
 if (!projectName) {  // project-name 必填
@@ -65,7 +69,7 @@ function go() {
     if (projectRoot !== '.') {
       fs.mkdirSync(projectRoot)
     }
-    return download(projectRoot, program.repository).then(target => {
+    return download(projectRoot, program.type, program.repository).then(target => {
       return {
         name: projectRoot,
         root: projectRoot,
