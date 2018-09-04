@@ -6,3 +6,5 @@
 新增 -t 选项，新增对gitlab的支持
 ```shell
 hwxyz init <project name> -t gitlab -r <gitlab address>
+#0.0.6
+新增自动执行npm install功能

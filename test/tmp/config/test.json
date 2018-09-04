@@ -1,0 +1,31 @@
+{
+    "env": "test",
+    "port": 8080,
+    "protocol": "http://",
+    "dirname": "../build",
+    "api": {
+        "claim": "15442-tech-atom-za-graphene-claims-backend.test.za-tech.net",
+        "i18n": "11541-tech-atom-za-graphene-i18n.test.za-tech.net",
+        "sso": "11732-tech-atom-za-graphene-nsso.test.za-tech.net"
+    },
+    "namespace": "common,claim_front",
+    "default_lang": "zh_CN",
+    "language": [
+        {
+            "key": "zh_CN",
+            "name": "简体中文"
+        },
+        {
+            "key": "zh_TW",
+            "name": "繁體中文"
+        },
+        {
+            "key": "en_US",
+            "name": "English"
+        },
+        {
+            "key": "ja_JP",
+            "name": "日本語"
+        }
+    ]
+}

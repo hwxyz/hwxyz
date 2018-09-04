@@ -1,0 +1,46 @@
+.flow-container{
+    display: flex;
+    width: 900px;
+    .flow-node{
+        flex: 1;
+        text-align: center;
+        position: relative;
+        border-bottom: #D8D8D8 2px solid;
+        .number-node{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            background: #CCC;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            margin: auto;
+            &.active{
+                background: #14C287;
+            }
+        }
+        p{
+            font-size: 14px;
+            color : #999;
+            margin-top: 10px;
+        }
+        .active-arrow{
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid #14C287;
+            margin: auto;
+            position: absolute;
+            bottom: -9px;
+            margin-left: calc(50% - 7px);
+        }
+        &.active{
+            border-bottom: #14C287 2px solid; 
+            p{
+                color :#333333
+            }
+        }
+    }
+}

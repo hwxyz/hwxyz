@@ -3,6 +3,8 @@ const path = require('path')
 const fs = require('fs')
 const download = require('../lib/download')
 const generator = require('../lib/generator')
+const process = require('process');
+const spawn = require('react-dev-utils/crossSpawn');
 
 // 命令行交互工具
 const program = require('commander')
@@ -22,8 +24,8 @@ program.usage('<project-name>')
   .option('-r, --repository [repository]', 'assign to repository', 'huomarvin/hwxyz-test')
   .parse(process.argv);
 
-console.log('repository - type', program.type);
-console.log('repository - r', program.repository);
+// console.log('repository - type', program.type);
+// console.log('repository - r', program.repository);
 // return ;
 let projectName = program.args[0];
 
@@ -105,7 +107,27 @@ function go() {
   }).then((res) => {
     // 成功用绿色显示，给出积极的反馈
     console.log(logSymbols.success, chalk.green('创建成功:)'))
-    console.log(chalk.green(`cd ${projectName}\nnpm install\nnpm run dev`))
+    // console.log(`Starting directory: ${process.cwd()}`);
+    try {
+      process.chdir(projectName);
+      // console.log(`New directory: ${process.cwd()}`);
+      const proc = spawn.sync('npm', ['install'], { stdio: 'inherit' });
+      if (proc.status === 0) {
+        // console.log('执行成功');
+        console.log(`Success! Created ${projectName} at ${process.cwd()}`);
+        console.log('Inside that directory, you can run several commands:');
+        console.log();
+        console.log(chalk.cyan(`  npm start`));
+        console.log('    Starts the development server.');
+        console.log();
+        console.log(
+          chalk.cyan(`  npm run build`)
+        );
+        console.log('    Bundles the app into static files for production.');
+      }
+    } catch (err) {
+      // console.error(`chdir: ${err}`);
+    }
   }).catch(err => {
     // 失败了用红色，增强提示
     console.error(logSymbols.error, chalk.red(`创建失败：${error.message}`))

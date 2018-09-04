@@ -1,0 +1,81 @@
+/* 左侧菜单样式重置 */
+.ant-menu {
+    .ant-menu-item {
+        height: 57px;
+        line-height: 57px;
+        font-size: 16px;
+        text-align: center;
+        padding-left: 0px;
+    }
+    .ant-menu-item:after {
+        right: 150px;
+        top: 8px;
+        border-right-width: 10px;
+        height: 40px;
+    }
+}
+
+/* 去掉菜单背景 */
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: none;
+}
+
+.ant-menu-item:active, .ant-menu-submenu-title:active {
+    background: none;
+}
+
+/* 按钮渐变色 */
+.ant-btn-primary {
+    background-image: linear-gradient(0deg, @primary-color 0%, @primary-light 100%);
+}
+
+/* 主色调背景 */
+.bg-primary {
+    background: @primary-color;
+}
+
+/* 表单title样式重置 */
+.ant-form-item-label label {
+    color: @label;
+}
+
+/* 模态框重写 */
+.ant-modal-content {
+    border-radius: 8px;
+}ß
+.ant-confirm-body-wrapper {
+    text-align: center;
+    .ant-confirm-title {
+        font-size: 20px;
+    }
+    .ant-confirm-title:before {
+        display: inline-block;
+        content: '';
+        width: 10px;
+        height: 20px;
+        line-height: 20px;
+        background: @primary-color;
+        margin-right: 20px;
+        position: relative;
+        top: 3px;
+    }
+    .ant-confirm-body {
+        text-align: left;
+        .anticon {
+            display: none;
+        }
+        .ant-confirm-content {
+            height: 158px;
+            font-size: 20px;
+            margin-left: 10px;
+            padding-top: 50px;
+            text-align: center;
+        }
+    }
+    .ant-confirm-btns {
+        float: none;
+    }
+    .ant-btn {
+        width: 80px;
+    }
+}
