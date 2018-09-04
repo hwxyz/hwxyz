@@ -33,9 +33,9 @@ hwxyz init <project name> -t gitlab -r <gitlab address>
 Update hwxyz:
 
 ```shell
-npm uninstall -g hwxyz
-npm install -g hwxyz
+npm update -g hwxyz
 ```
+参考[如何更新全局安装的包](https://www.npmjs.com.cn/getting-started/updating-global-packages/)
 
 
 
