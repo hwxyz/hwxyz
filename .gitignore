@@ -12,3 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 /.changelog
+test_inner
+hwxyz.json
+.download-temp
