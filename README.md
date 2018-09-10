@@ -28,6 +28,8 @@ hwxyz init <project name>
 hwxyz init <project name> -r huomarvin/react-koa2-ssr
 # 针对公司内网情况，增加-t参数，可配置初始化仓库为gitlab
 hwxyz init <project name> -t gitlab -r <gitlab address>
+# 项目更新功能
+hwxyz update
 ```
 
 Update hwxyz:

@@ -105,12 +105,27 @@ function go() {
     // 添加生成的逻辑
     return generator(context.metadata, context.target, path.parse(context.target).dir);
   }).then((res) => {
+    const projectPath = path.resolve(res.dest);
+    const hwxyzJson = {
+      repository: {
+        address: program.repository,
+        type: program.type,
+      },
+      replace_dir: [],
+      package: {
+        dependencies: "update",
+        scripts: "add",
+        repository: "replace"
+      }
+    };
+    fs.writeFileSync(`${projectPath}/hwxyz.json`, JSON.stringify(hwxyzJson, null, 4));
+    let local_package = JSON.parse(fs.readFileSync(`${projectPath}/package.json`).toString());
+    local_package.templateVersion = res.templateVersion || '0.0.1';
+    fs.writeFileSync(`${projectPath}/package.json`, JSON.stringify(local_package, null, 4));
     // 成功用绿色显示，给出积极的反馈
     console.log(logSymbols.success, chalk.green('创建成功:)'))
-    // console.log(`Starting directory: ${process.cwd()}`);
     try {
       process.chdir(projectName);
-      // console.log(`New directory: ${process.cwd()}`);
       const proc = spawn.sync('npm', ['install'], { stdio: 'inherit' });
       if (proc.status === 0) {
         // console.log('执行成功');
@@ -130,6 +145,6 @@ function go() {
     }
   }).catch(err => {
     // 失败了用红色，增强提示
-    console.error(logSymbols.error, chalk.red(`创建失败：${error.message}`))
+    console.error(logSymbols.error, chalk.red(`创建失败：${err.message}`))
   })
 }
