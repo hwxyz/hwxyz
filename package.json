@@ -29,6 +29,7 @@
     "inquirer": "^5.2.0",
     "latest-version": "^3.1.0",
     "log-symbols": "^2.2.0",
+    "log4js": "^3.0.5",
     "metalsmith": "^2.3.0",
     "ora": "^2.1.0",
     "react-dev-utils": "^5.0.0",
