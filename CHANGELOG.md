@@ -8,3 +8,27 @@
 hwxyz init <project name> -t gitlab -r <gitlab address>
 #0.0.6
 新增自动执行npm install功能
+
+#0.0.9
+新增更新功能:
+项目初始化时新增hwxyz.json文件
+执行`hwxyz update`时，通过模板版本进行替换工作
+```json
+{
+    // 由hwxyz生成
+    "repository": {
+        "address": "http://gitlab.mygitlab.com:username/testhwxyzcli#master",
+        "type": "gitlab"
+    },
+    // 每次替换的模板文件夹，lib下一般存放公共文件
+    "replace_dir": [
+        'lib'
+    ],
+    // package.json 文件中替换策略， update代表替值，add代表模板文件有的，本地文件没有的要进行新增，replace代表完全替换
+    "package": {
+        "dependencies": "update",
+        "scripts": "add",
+        "repository": "replace"
+    }
+}
+```
