@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 const program = require('commander')  // npm i commander -D
-
 program.version(`v${require('../package.json').version}`, '-v, --version')
 	.usage('<command> [项目名称]')
 	.command('hello', 'hello')
 	.command('init', 'init project')
+	.command('update', 'update project from newest template')
 	.parse(process.argv)
